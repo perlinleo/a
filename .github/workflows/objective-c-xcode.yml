@@ -25,4 +25,4 @@ jobs:
 
     - name: Run tests
       run: |
-        xcodebuild test -project a.xcodeproj -scheme a clean build -sdk iphoneos -destination "platform=iOS Simulator,OS=16.1,name=iPhone 14 Pro Max" -allowProvisioningUpdates
+        xcodebuild test -project a.xcodeproj -scheme a clean build -sdk iphoneos -destination "platform=iOS Simulator,OS=16.1,name=iPhone 15 Pro Max" -allowProvisioningUpdates
