@@ -7,15 +7,39 @@
 
 import CoreData
 
+struct BalanceHistoryEntry: Identifiable {
+    var id: UUID
+    let timestamp: Date
+    let amount: Decimal
+    let balance: Decimal
+}
+
 struct PersistenceController {
     static let shared = PersistenceController()
+
+    static var randomPurchaseName: String {
+        ["book", "shirt", "coffee", "ticket", "subscription"].randomElement()!
+    }
+
+    static var randomPurchaseDate: Date {
+        let calendar = Calendar.current
+
+        var components = DateComponents(year: calendar.component(.year, from: Date()), month: calendar.component(.month, from: Date()) - 1)
+        components.day = Int.random(in: 1...28)
+        components.hour = Int.random(in: 0...23)
+        components.minute = Int.random(in: 0...59)
+        
+        return calendar.date(from: components) ?? Date()
+    }
 
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
             let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            newItem.timestamp = randomPurchaseDate
+            newItem.name = randomPurchaseName
+            newItem.amount = NSDecimalNumber(value: Double.random(in: -1000...10000))
         }
         do {
             try viewContext.save()
@@ -53,4 +77,6 @@ struct PersistenceController {
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
+
+    
 }

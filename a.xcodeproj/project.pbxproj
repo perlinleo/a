@@ -16,6 +16,10 @@
 		C03B44852B8A570E00F91E01 /* aTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B44842B8A570E00F91E01 /* aTests.swift */; };
 		C03B448F2B8A570E00F91E01 /* aUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B448E2B8A570E00F91E01 /* aUITests.swift */; };
 		C03B44912B8A570E00F91E01 /* aUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B44902B8A570E00F91E01 /* aUITestsLaunchTests.swift */; };
+		C03B44A02B8A689500F91E01 /* OperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B449F2B8A689500F91E01 /* OperationView.swift */; };
+		C03B44A22B8A68E800F91E01 /* TotalBalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B44A12B8A68E800F91E01 /* TotalBalanceView.swift */; };
+		C03B44A72B8A822700F91E01 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C03B44A42B8A81A500F91E01 /* Charts.framework */; };
+		C0C8422A2B8A89E800DCB1CB /* FinancialOperationEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C842292B8A89E800DCB1CB /* FinancialOperationEntryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,10 @@
 		C03B448A2B8A570E00F91E01 /* aUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = aUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03B448E2B8A570E00F91E01 /* aUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aUITests.swift; sourceTree = "<group>"; };
 		C03B44902B8A570E00F91E01 /* aUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C03B449F2B8A689500F91E01 /* OperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationView.swift; sourceTree = "<group>"; };
+		C03B44A12B8A68E800F91E01 /* TotalBalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalBalanceView.swift; sourceTree = "<group>"; };
+		C03B44A42B8A81A500F91E01 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = System/Library/Frameworks/Charts.framework; sourceTree = SDKROOT; };
+		C0C842292B8A89E800DCB1CB /* FinancialOperationEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialOperationEntryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C03B44A72B8A822700F91E01 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +91,7 @@
 				C03B44832B8A570E00F91E01 /* aTests */,
 				C03B448D2B8A570E00F91E01 /* aUITests */,
 				C03B446C2B8A570D00F91E01 /* Products */,
+				C03B44A32B8A81A500F91E01 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,6 +108,7 @@
 		C03B446D2B8A570D00F91E01 /* a */ = {
 			isa = PBXGroup;
 			children = (
+				C03B449E2B8A688000F91E01 /* Core */,
 				C03B446E2B8A570D00F91E01 /* aApp.swift */,
 				C03B44702B8A570D00F91E01 /* ContentView.swift */,
 				C03B44722B8A570E00F91E01 /* Assets.xcassets */,
@@ -131,6 +142,24 @@
 				C03B44902B8A570E00F91E01 /* aUITestsLaunchTests.swift */,
 			);
 			path = aUITests;
+			sourceTree = "<group>";
+		};
+		C03B449E2B8A688000F91E01 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C03B449F2B8A689500F91E01 /* OperationView.swift */,
+				C03B44A12B8A68E800F91E01 /* TotalBalanceView.swift */,
+				C0C842292B8A89E800DCB1CB /* FinancialOperationEntryView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C03B44A32B8A81A500F91E01 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C03B44A42B8A81A500F91E01 /* Charts.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,7 +294,10 @@
 			files = (
 				C03B44782B8A570E00F91E01 /* Persistence.swift in Sources */,
 				C03B44712B8A570D00F91E01 /* ContentView.swift in Sources */,
+				C0C8422A2B8A89E800DCB1CB /* FinancialOperationEntryView.swift in Sources */,
+				C03B44A02B8A689500F91E01 /* OperationView.swift in Sources */,
 				C03B446F2B8A570D00F91E01 /* aApp.swift in Sources */,
+				C03B44A22B8A68E800F91E01 /* TotalBalanceView.swift in Sources */,
 				C03B447B2B8A570E00F91E01 /* a.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +470,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -467,6 +500,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -489,7 +523,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KD82SC4QSX;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.leonidperlin.aTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -509,7 +543,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KD82SC4QSX;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.leonidperlin.aTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -528,6 +562,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KD82SC4QSX;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.leonidperlin.aUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -546,6 +581,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KD82SC4QSX;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.leonidperlin.aUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

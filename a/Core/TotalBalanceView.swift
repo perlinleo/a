@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct TotalBalanceView: View {
+    @Binding var total: Decimal
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            VStack(alignment: .leading, content: {
+                Text("Total Balance")
+                    .font(.largeTitle)
+                Text("\(total, format: .currency(code: "USD"))")
+                    .font(.title)
+            })
+        }
     }
 }
 
 #Preview {
-    TotalBalanceView()
+    TotalBalanceView(total: .constant(100.02))
 }
