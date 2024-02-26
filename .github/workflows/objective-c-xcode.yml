@@ -26,6 +26,7 @@ jobs:
     - name: Run tests
       run: |
         xcodebuild test -project a.xcodeproj -scheme a -sdk iphoneos -destination "platform=iOS Simulator,OS=17.2,name=iPhone 15 Pro Max" -allowProvisioningUpdates -resultBundlePath TestResults
+        
     - uses: kishikawakatsumi/xcresulttool@v1
       with:
           path: TestResults.xcresult
