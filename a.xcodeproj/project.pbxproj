@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0342D182B977FDA0063BBD2 /* build-test.yml in Resources */ = {isa = PBXBuildFile; fileRef = C0342D172B977FDA0063BBD2 /* build-test.yml */; };
 		C03B446F2B8A570D00F91E01 /* aApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B446E2B8A570D00F91E01 /* aApp.swift */; };
 		C03B44712B8A570D00F91E01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B44702B8A570D00F91E01 /* ContentView.swift */; };
 		C03B44732B8A570E00F91E01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C03B44722B8A570E00F91E01 /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C0342D172B977FDA0063BBD2 /* build-test.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = "build-test.yml"; sourceTree = "<group>"; };
 		C03B446B2B8A570D00F91E01 /* a.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = a.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03B446E2B8A570D00F91E01 /* aApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aApp.swift; sourceTree = "<group>"; };
 		C03B44702B8A570D00F91E01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,9 +86,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C0342D152B977FDA0063BBD2 /* .github */ = {
+			isa = PBXGroup;
+			children = (
+				C0342D162B977FDA0063BBD2 /* workflows */,
+			);
+			path = .github;
+			sourceTree = "<group>";
+		};
+		C0342D162B977FDA0063BBD2 /* workflows */ = {
+			isa = PBXGroup;
+			children = (
+				C0342D172B977FDA0063BBD2 /* build-test.yml */,
+			);
+			path = workflows;
+			sourceTree = "<group>";
+		};
 		C03B44622B8A570D00F91E01 = {
 			isa = PBXGroup;
 			children = (
+				C0342D152B977FDA0063BBD2 /* .github */,
 				C03B446D2B8A570D00F91E01 /* a */,
 				C03B44832B8A570E00F91E01 /* aTests */,
 				C03B448D2B8A570E00F91E01 /* aUITests */,
@@ -267,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C03B44762B8A570E00F91E01 /* Preview Assets.xcassets in Resources */,
+				C0342D182B977FDA0063BBD2 /* build-test.yml in Resources */,
 				C03B44732B8A570E00F91E01 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
