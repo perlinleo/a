@@ -1,7 +1,7 @@
 included:
-  - Plugins
-  - Source
-  - Tests
+  - a
+  - aTests
+  - aUITests
 excluded:
   - Tests/SwiftLintFrameworkTests/Resources
 analyzer_rules:
