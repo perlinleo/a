@@ -31,4 +31,7 @@ jobs:
           path: TestResults.xcresult
       if: success() || failure()
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1.2.1
+      uses: codecov/codecov-action@v4.0.1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        slug: perlinleo/a
