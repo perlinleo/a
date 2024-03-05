@@ -42,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		C0342D172B977FDA0063BBD2 /* build-test.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = "build-test.yml"; sourceTree = "<group>"; };
+		C0342D192B9787670063BBD2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C03B446B2B8A570D00F91E01 /* a.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = a.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03B446E2B8A570D00F91E01 /* aApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aApp.swift; sourceTree = "<group>"; };
 		C03B44702B8A570D00F91E01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		C03B44622B8A570D00F91E01 = {
 			isa = PBXGroup;
 			children = (
+				C0342D192B9787670063BBD2 /* README.md */,
 				C0342D152B977FDA0063BBD2 /* .github */,
 				C03B446D2B8A570D00F91E01 /* a */,
 				C03B44832B8A570E00F91E01 /* aTests */,
