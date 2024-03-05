@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C0342D182B977FDA0063BBD2 /* build-test.yml in Resources */ = {isa = PBXBuildFile; fileRef = C0342D172B977FDA0063BBD2 /* build-test.yml */; };
+		C0342D1B2B9789030063BBD2 /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C0342D1A2B9789030063BBD2 /* swiftlint.yml */; };
 		C03B446F2B8A570D00F91E01 /* aApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B446E2B8A570D00F91E01 /* aApp.swift */; };
 		C03B44712B8A570D00F91E01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B44702B8A570D00F91E01 /* ContentView.swift */; };
 		C03B44732B8A570E00F91E01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C03B44722B8A570E00F91E01 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		C0342D172B977FDA0063BBD2 /* build-test.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = "build-test.yml"; sourceTree = "<group>"; };
 		C0342D192B9787670063BBD2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C0342D1A2B9789030063BBD2 /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
 		C03B446B2B8A570D00F91E01 /* a.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = a.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03B446E2B8A570D00F91E01 /* aApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aApp.swift; sourceTree = "<group>"; };
 		C03B44702B8A570D00F91E01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 		C0342D162B977FDA0063BBD2 /* workflows */ = {
 			isa = PBXGroup;
 			children = (
+				C0342D1A2B9789030063BBD2 /* swiftlint.yml */,
 				C0342D172B977FDA0063BBD2 /* build-test.yml */,
 			);
 			path = workflows;
@@ -288,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C03B44762B8A570E00F91E01 /* Preview Assets.xcassets in Resources */,
+				C0342D1B2B9789030063BBD2 /* swiftlint.yml in Resources */,
 				C0342D182B977FDA0063BBD2 /* build-test.yml in Resources */,
 				C03B44732B8A570E00F91E01 /* Assets.xcassets in Resources */,
 			);
