@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		C0342D182B977FDA0063BBD2 /* build-test.yml in Resources */ = {isa = PBXBuildFile; fileRef = C0342D172B977FDA0063BBD2 /* build-test.yml */; };
+		C0342D1B2B9789030063BBD2 /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C0342D1A2B9789030063BBD2 /* swiftlint.yml */; };
+		C0342D1D2B97932D0063BBD2 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C0342D1C2B97932D0063BBD2 /* .swiftlint.yml */; };
 		C03B446F2B8A570D00F91E01 /* aApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B446E2B8A570D00F91E01 /* aApp.swift */; };
 		C03B44712B8A570D00F91E01 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03B44702B8A570D00F91E01 /* ContentView.swift */; };
 		C03B44732B8A570E00F91E01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C03B44722B8A570E00F91E01 /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		C0342D172B977FDA0063BBD2 /* build-test.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = "build-test.yml"; sourceTree = "<group>"; };
 		C0342D192B9787670063BBD2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C0342D1A2B9789030063BBD2 /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
+		C0342D1C2B97932D0063BBD2 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C03B446B2B8A570D00F91E01 /* a.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = a.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03B446E2B8A570D00F91E01 /* aApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aApp.swift; sourceTree = "<group>"; };
 		C03B44702B8A570D00F91E01 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 		C0342D162B977FDA0063BBD2 /* workflows */ = {
 			isa = PBXGroup;
 			children = (
+				C0342D1A2B9789030063BBD2 /* swiftlint.yml */,
 				C0342D172B977FDA0063BBD2 /* build-test.yml */,
 			);
 			path = workflows;
@@ -106,6 +111,7 @@
 		C03B44622B8A570D00F91E01 = {
 			isa = PBXGroup;
 			children = (
+				C0342D1C2B97932D0063BBD2 /* .swiftlint.yml */,
 				C0342D192B9787670063BBD2 /* README.md */,
 				C0342D152B977FDA0063BBD2 /* .github */,
 				C03B446D2B8A570D00F91E01 /* a */,
@@ -190,6 +196,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C03B44942B8A570E00F91E01 /* Build configuration list for PBXNativeTarget "a" */;
 			buildPhases = (
+				C0342D1E2B9794950063BBD2 /* ShellScript */,
 				C03B44672B8A570D00F91E01 /* Sources */,
 				C03B44682B8A570D00F91E01 /* Frameworks */,
 				C03B44692B8A570D00F91E01 /* Resources */,
@@ -287,7 +294,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0342D1D2B97932D0063BBD2 /* .swiftlint.yml in Resources */,
 				C03B44762B8A570E00F91E01 /* Preview Assets.xcassets in Resources */,
+				C0342D1B2B9789030063BBD2 /* swiftlint.yml in Resources */,
 				C0342D182B977FDA0063BBD2 /* build-test.yml in Resources */,
 				C03B44732B8A570E00F91E01 /* Assets.xcassets in Resources */,
 			);
@@ -308,6 +317,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C0342D1E2B9794950063BBD2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "swiftlint || true\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C03B44672B8A570D00F91E01 /* Sources */ = {
@@ -394,7 +423,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -457,7 +486,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

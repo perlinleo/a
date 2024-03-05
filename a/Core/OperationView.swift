@@ -19,7 +19,7 @@ struct OperationView: View {
         return amount < 0
     }
 
-    func onDelete(_ callback: @escaping () -> ()) -> some View {
+    func onDelete(_ callback: @escaping () -> Void) -> some View {
         OperationView(onDelete: callback, item: self.item, amount: self.amount, name: self.name)
     }
 

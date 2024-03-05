@@ -28,7 +28,7 @@ struct PersistenceController {
         components.day = Int.random(in: 1...28)
         components.hour = Int.random(in: 0...23)
         components.minute = Int.random(in: 0...59)
-        
+
         return calendar.date(from: components) ?? Date()
     }
 
@@ -39,7 +39,7 @@ struct PersistenceController {
             let newItem = Item(context: viewContext)
             newItem.timestamp = randomPurchaseDate
             newItem.name = randomPurchaseName
-            newItem.amount = NSDecimalNumber(value: Double.random(in: -1000...10000))
+            newItem.amount = NSDecimalNumber(value: Double.random(in: -1000...10_000))
         }
         do {
             try viewContext.save()
@@ -47,7 +47,7 @@ struct PersistenceController {
             // Replace this implementation with code to handle the error appropriately.
             // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            preconditionFailure("Unresolved error \(nsError), \(nsError.userInfo)")
         }
         return result
     }()
@@ -59,7 +59,7 @@ struct PersistenceController {
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        container.loadPersistentStores(completionHandler: { _, error in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -72,11 +72,9 @@ struct PersistenceController {
                  * The store could not be migrated to the current model version.
                  Check the error message to determine what the actual problem was.
                  */
-                fatalError("Unresolved error \(error), \(error.userInfo)")
+                preconditionFailure("Unresolved error \(error), \(error.userInfo)")
             }
         })
         container.viewContext.automaticallyMergesChangesFromParent = true
     }
-
-    
 }

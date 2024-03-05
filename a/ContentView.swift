@@ -5,12 +5,13 @@
 //  Created by Leonid Perlin on 2/24/24.
 //
 
-import SwiftUI
-import CoreData
 import Charts
+import CoreData
+import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.managedObjectContext)
+    private var viewContext
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: false)],
@@ -23,7 +24,7 @@ struct ContentView: View {
     private var BalanceHistoryChart: some View {
         Chart {
             ForEach(fetchBalanceHistory()) { item in
-                LineMark (
+                LineMark(
                     x: .value("Label", item.timestamp),
                     y: .value("Value", item.balance)
                 )
@@ -32,7 +33,6 @@ struct ContentView: View {
             .background(Color(UIColor.systemBackground))
             .clipShape(RoundedRectangle(cornerSize: CGSize(width: 10, height: 20)))
             .padding(.init(top: 12, leading: 12, bottom: 12, trailing: 12))
-
     }
 
     private var OperationHistoryScrollView: some View {
@@ -40,19 +40,16 @@ struct ContentView: View {
             LazyVStack {
                 ForEach(items, id: \.self) { item in
                     OperationView(item: item.timestamp!, amount: item.amount as Decimal? ?? 0, name: item.name as String? ?? "")
-                        .onDelete({deleteItem(item: item)})
+                        .onDelete({ deleteItem(item: item) })
 
-                        .containerRelativeFrame(.vertical,
-                            count: 4,
-                            spacing: 10)
-                        .scrollTransition(transition: { content , phase in
+                        .containerRelativeFrame(.vertical, count: 4, spacing: 10)
+                        .scrollTransition(transition: { content, phase in
                             content
                                 .opacity(phase.isIdentity ? 1.0 : 0)
                                 .scaleEffect(x: phase.isIdentity ? 1.0 : 0.3,
                                              y: phase.isIdentity ? 1.0 : 0.3)
                                 .offset(y: phase.isIdentity ? 0 : -50)
                         })
-
                 }
             }.scrollContentBackground(.hidden)
                 .scrollTargetLayout()
@@ -67,7 +64,7 @@ struct ContentView: View {
                 Color(UIColor.secondarySystemBackground).ignoresSafeArea()
                 VStack {
                     HStack {
-                        VStack (alignment: .leading, content: {
+                        VStack(alignment: .leading, content: {
                             TotalBalanceView(total: $totalBalance)
                         }).padding()
                         Spacer()
@@ -85,14 +82,6 @@ struct ContentView: View {
                     OperationHistoryScrollView
                     Spacer()
                 }
-            }.onAppear {
-                totalBalance = fetchTotalBalance()
-                NotificationCenter.default.addObserver(forName: NSNotification.Name.NSManagedObjectContextDidSave, object: viewContext, queue: .main) { notification in
-                    totalBalance = fetchTotalBalance()
-                }
-            }
-            .onDisappear {
-                NotificationCenter.default.removeObserver(self)
             }
         }
     }
@@ -106,16 +95,16 @@ struct ContentView: View {
                 try viewContext.save()
             } catch {
                 let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                preconditionFailure("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
-    
+
     private var totalBalanceProperty: Decimal {
         fetchTotalBalance()
     }
     private func fetchTotalBalance() -> Decimal {
-        return fetchOperations().reduce(0) { sum, item in sum + ((item.amount ?? 0) as Decimal)}
+        return fetchOperations().reduce(0) { sum, item in sum + ((item.amount ?? 0) as Decimal) }
     }
 
     private func fetchBalanceHistory() -> [BalanceHistoryEntry] {
@@ -140,8 +129,7 @@ struct ContentView: View {
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "timestamp", ascending: true)]
 
             do {
-                let results = try viewContext.fetch(fetchRequest)
-                return results
+                return try viewContext.fetch(fetchRequest)
             } catch {
                 print(error.localizedDescription)
                 return []
@@ -157,13 +145,11 @@ struct ContentView: View {
                 try viewContext.save()
             } catch {
                 let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                preconditionFailure("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
     }
 }
-
-
 
 #Preview {
     ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
