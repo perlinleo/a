@@ -25,7 +25,7 @@ jobs:
     - name: Run tests
       run: |
         xcrun simctl boot 'iPhone 15 Pro' || sleep 15
-        xcodebuild test -project a.xcodeproj -scheme a -sdk iphoneos -destination "platform=iOS Simulator,OS=17.2,name=iPhone 15 Pro" -allowProvisioningUpdates -resultBundlePath TestResults -enableCodeCoverage
+        xcodebuild test -project a.xcodeproj -scheme a -sdk iphoneos -destination "platform=iOS Simulator,OS=17.2,name=iPhone 15 Pro" -allowProvisioningUpdates -resultBundlePath TestResults -enableCodeCoverage YES
     - uses: kishikawakatsumi/xcresulttool@v1
       with:
           path: TestResults.xcresult
